@@ -6,9 +6,9 @@ average_execution_time_topk = 17.98
 average_execution_time_notopK = 20.02
 
 
-blue = '#3752A4'
-red = '#eb1d22'
-
+blue = '#3C6DB4'
+red = '#EF5E21'
+green ='#81C998'
 
 def readgpuinfo(path):
     used_list = []
@@ -84,7 +84,7 @@ if __name__ == "__main__":
             increase_percentage.append(0)
     
     x = range(len(notopk))
-    width = 0.35  # 条形的宽度
+    width = 0.3  # 条形的宽度
 
     # 创建分组柱状图
     plt.bar(x, notopk, width, label='WithoutTopK', color=blue)
@@ -106,4 +106,5 @@ if __name__ == "__main__":
 
     # 显示图表
     plt.tight_layout()  # 调整布局以适应标签
-    plt.show()
+    # plt.show()
+    plt.savefig("TopK-layer.png",dpi=600, bbox_inches='tight')
